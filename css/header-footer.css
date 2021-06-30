@@ -1,0 +1,93 @@
+/* nav */
+.container nav {
+  background-color: var(--header-footer);
+  grid-area: nav;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.blog-title {
+  color: #f8f9fa;
+  font-family: "Lobster", cursive;
+  font-size: 1.8rem;
+  letter-spacing: 0.5rem;
+  margin-left: 25px;
+}
+.blog-title h1 {
+  cursor: cell;
+}
+.blog-title::first-letter {
+  color: var(--main-color);
+}
+.blog-title:hover {
+  color: var(--link-color);
+  transition: 0.2s;
+  cursor: pointer;
+}
+nav .nav-list {
+  flex: 1;
+}
+nav .nav-list ul {
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: row wrap;
+}
+nav .nav-list ul li {
+  list-style: none;
+}
+nav .nav-list ul li a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-family: "Lobster", cursive;
+  color: #f8f9fa;
+}
+nav .nav-list ul li a:hover {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-family: "Lobster", cursive;
+  color: var(--link-color);
+  transition: 0.25s;
+  cursor: pointer;
+  text-decoration: underline;
+}
+/* footer */
+.container footer {
+  background: var(--header-footer);
+  color: #f8f9fa;
+  grid-area: footer;
+  height: 200px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+footer .main-footer h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  letter-spacing: 0.5rem;
+}
+footer .main-footer h1::first-letter {
+  color: var(--main-color);
+  font-size: 3rem;
+}
+footer .main-footer .fs-icon {
+  font-size: 1.5rem;
+}
+footer .list {
+  font-family: "Libre Baskerville", serif;
+}
+footer .list h2 {
+  margin-bottom: 5px;
+}
+footer .list ul li {
+  margin: 0 0 10px 0;
+}
+footer .list ul li a {
+  color: var(--article-color);
+  text-decoration: none;
+}
+footer .list ul li a:hover {
+  color: var(--link-color);
+  text-decoration: underline;
+}

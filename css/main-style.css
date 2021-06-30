@@ -1,0 +1,287 @@
+@import "color-rullset.css";
+@import "cards.css";
+@import "header-footer.css";
+/*
+ main container
+*/
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 0.5fr 2fr 1fr 0.5fr;
+  grid-gap: 25px;
+  margin: 15px;
+  grid-template-areas:
+    "nav"
+    "main"
+    "about"
+    "footer";
+}
+/*
+main content
+*/
+.container main {
+  grid-area: main;
+  display: grid;
+  grid-auto-rows: repeat(2, 1fr);
+  grid-template-columns: 6fr 1fr;
+  grid-gap: 15px;
+  grid-template-areas: "maincard maincard" "cards aside";
+}
+/*
+  maincards start 
+*/
+main .maincards {
+  grid-area: maincard;
+  display: flex;
+  flex-flow: row-reverse wrap;
+  border: 1px solid rgb(214, 207, 207);
+  box-shadow: 0px 5px 5px 0px rgb(252, 250, 252);
+  border-radius: 5px;
+  background: var(--cards-color);
+}
+.container main .cards {
+  grid-area: cards;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "card1 card2"
+    "card3 card4";
+  grid-gap: 15px;
+}
+.maincards #maincard-img {
+  flex: 1;
+  max-width: 100%;
+  height: auto;
+  filter: grayscale(50%);
+  border-left: 0.1px solid rgb(214, 207, 207);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.maincards .article-content #portrait-img {
+  width: 70px;
+  height: auto;
+  border-radius: 50%;
+  padding: 15px 0 0 0;
+}
+.maincards #maincard-img:hover {
+  max-width: 100%;
+  height: auto;
+  filter: grayscale(0);
+  transition: 0.25s;
+}
+.maincards .article-content {
+  padding: 15px;
+  flex: 2;
+  color: #dee2e6;
+  line-height: 1.5rem;
+}
+.maincards .article-content h1 {
+  font-family: "Libre Baskerville", serif;
+  line-height: 2rem;
+  font-size: 1.4rem;
+}
+.article-content .rd-sec {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.article-content .rd-sec .date-sec {
+  color: rgb(170, 169, 169);
+}
+.article-content .rd-sec .rd-time {
+  color: var(--main-color);
+}
+.article-content .date-sec span {
+  color: var(--main-color);
+}
+.article-content hr {
+  width: 50%;
+  margin: 10px auto;
+  opacity: 0.4;
+}
+.article-content .pg p {
+  font-family: "Libre Baskerville", serif;
+  line-height: 1.5rem;
+  color: #dee2e6;
+}
+.article-content .pg a {
+  display: inline-block;
+  background-color: var(--main-color);
+  color: #dee2e6;
+  font-weight: 700;
+  padding: 8px;
+  text-decoration: none;
+  text-transform: capitalize;
+  margin: 0 auto;
+}
+/* maincard end here*/
+/* cards start here*/
+main .cards .card1 {
+  grid-area: card1;
+}
+main .cards .card2 {
+  grid-area: card2;
+}
+main .cards .card3 {
+  grid-area: card3;
+}
+main .cards .card4 {
+  grid-area: card4;
+}
+/*
+ card end here
+*/
+/* sidebar for weather */
+.container main aside {
+  grid-area: aside;
+  display: flex;
+  flex-flow: column wrap;
+}
+main aside .weather {
+  border: 1px solid rgb(214, 207, 207);
+  box-shadow: 0px 5px 5px 0px rgb(252, 250, 252);
+  border-radius: 5px;
+  flex: 1;
+  display: flex;
+  flex-flow: column wrap;
+  height: 100%;
+}
+main aside .weather .icon {
+  background-color: snow;
+  font-size: 4rem;
+  align-self: center;
+  height: 30%;
+}
+main aside .weather .wr-text {
+  display: flex;
+  flex-flow: row wrap;
+  height: 70%;
+}
+main aside .weather .wr-text .wr-temp {
+  flex: 2;
+  background-color: #333;
+  color: #fff;
+  font-family: cursive;
+}
+main aside .weather .wr-text .wr-date {
+  flex: 1;
+  background-color: cadetblue;
+  font-family: cursive;
+}
+main aside .ads {
+  text-align: center;
+  background: var(--dark-gray);
+  flex: 4;
+}
+/* about section */
+.container .about {
+  grid-area: about;
+  display: flex;
+  flex-flow: row-reverse wrap;
+  background-color: var(--dark-gray);
+}
+.about img {
+  flex: 1;
+  width: 400px;
+  height: auto;
+}
+.about .about-content {
+  align-self: center;
+  flex: 2;
+  padding: 10px;
+}
+.about .about-content .text h1 {
+  font-size: 2rem;
+  text-align: center;
+  font-family: "Libre Baskerville", serif;
+  letter-spacing: 0.3rem;
+  border-bottom: 1px dashed gray;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+.about-content .text h1 span {
+  color: var(--main-color);
+}
+.about-content p {
+  margin-top: 30px;
+  font-family: "Libre Baskerville", serif;
+}
+.container .about .newsletter {
+  font-family: "Libre Baskerville", serif;
+  text-align: center;
+  margin-top: 10px;
+}
+.container .about .newsletter input {
+  padding: 10px;
+  font-size: 1.1rem;
+}
+.container .about .newsletter button {
+  padding: 10px;
+  background: var(--main-color);
+  color: var(--article-color);
+  border: none;
+  font-size: 1rem;
+}
+.about-content .fs-icon {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 2rem;
+}
+.fs-icon i {
+  margin: 0 10px;
+}
+.fs-icon .fa-facebook {
+  color: #4267b2;
+}
+.fs-icon .fa-twitter {
+  color: #00acee;
+}
+.fs-icon .fa-instagram {
+  color: #e95950;
+}
+.fs-icon .fa-tumblr-square {
+  color: #34526f;
+}
+
+/* media query */
+@media (max-width: 650px) {
+  .container {
+    max-width: 100%;
+    max-height: 100vh;
+    padding: 10px;
+    margin: 0;
+  }
+  .container nav {
+    max-width: 100%;
+  }
+  .container main {
+    max-width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "maincard"
+      "aside"
+      "cards";
+  }
+  .container main .cards {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "card1"
+      "card2"
+      "card3"
+      "card4";
+  }
+  .container .about {
+    max-width: 100%;
+  }
+  .container .about button {
+    margin-top: 10px;
+  }
+  .container .about img {
+    max-width: 100%;
+  }
+  .container footer {
+    max-width: 100%;
+    font-size: 0.8rem;
+  }
+}
